@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fZMwbO3qR2k=",
+  "dgSpecHash": "GADBAYL8GBo=",
   "success": true,
   "projectFilePath": "C:\\Users\\nathan.chavaudra\\OneDrive - Magellan Partners\\Bureau\\Projet-Pronote\\Backend\\API\\API.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\nathan.chavaudra\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
+    "C:\\Users\\nathan.chavaudra\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.1\\microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
     "C:\\Users\\nathan.chavaudra\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
   ],
   "logs": []
