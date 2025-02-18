@@ -34,11 +34,11 @@ steps:
     dotnet tool install --global dotnet-sonarscanner
   displayName: 'Install .NET tools'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'restore'
-    projects: '$(solution)'
-  displayName: 'restore'
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: 'restore'
+#     projects: '$(solution)'
+#   displayName: 'restore'
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
