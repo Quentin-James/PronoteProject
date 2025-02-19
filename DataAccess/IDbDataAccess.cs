@@ -1,7 +1,7 @@
 ﻿namespace DataAccess;
 
 using Microsoft.EntityFrameworkCore;
-using Models;
+using Models.Models;
 
 /// <summary>
 /// Interface representing the data access to the database.

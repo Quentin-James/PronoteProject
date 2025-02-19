@@ -1,4 +1,4 @@
-﻿namespace Models;
+﻿namespace Models.Models;
 
 /// <summary>
 /// Represents an absence with its details.

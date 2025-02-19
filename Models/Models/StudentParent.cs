@@ -1,5 +1,4 @@
-﻿namespace Models;
-
+﻿namespace Models.Models;
 /// <summary>
 /// Represents the relationship between a student and a parent.
 /// </summary>

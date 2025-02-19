@@ -1,5 +1,4 @@
 using DataAccess;
-using Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Business;
@@ -7,6 +6,7 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using Microsoft.OpenApi.Models;
 using Business.Extensions;
+using Models.Models;
 
 /// <summary>
 /// Entry point for the application. Configures services and middleware.

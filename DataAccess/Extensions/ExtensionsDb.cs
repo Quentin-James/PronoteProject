@@ -9,7 +9,7 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using Models;
+    using Models.Models;
 
     public static class ExtensionsDb
     {

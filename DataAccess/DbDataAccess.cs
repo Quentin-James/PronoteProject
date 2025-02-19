@@ -1,9 +1,9 @@
 ﻿namespace DataAccess;
 
-using Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Models.Models;
 
 /// <summary>
 /// DbDataAccess class that inherits from IdentityDbContext to manage database operations.

@@ -1,5 +1,4 @@
-﻿namespace Models;
-
+﻿namespace Models.Models;
 /// <summary>
 /// Represents a class in a school.
 /// </summary>

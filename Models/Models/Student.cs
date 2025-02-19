@@ -1,5 +1,4 @@
-﻿namespace Models;
-
+﻿namespace Models.Models;
 public class Student
 {
     /// <summary>
