@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Routing.Abstractions" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="9.0.2" />
+    <PackageReference Include="Microsoft.Graph" Version="5.70.0" />
+    <PackageReference Include="Riok.Mapperly" Version="4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Models\Models.csproj" />
+  </ItemGroup>
+
+</Project>
