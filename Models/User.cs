@@ -2,15 +2,38 @@
 
 using Microsoft.AspNetCore.Identity;
 
+/// <summary>
+/// Represents a user in the system.
+/// </summary>
 public class User : IdentityUser<int>
 {
-    public string Nom { get; set; }
-    public string Prenom { get; set; }
+    /// <summary>
+    /// Gets or sets the last name of the user.
+    /// </summary>
+    public string? Nom { get; set; }
 
+    /// <summary>
+    /// Gets or sets the first name of the user.
+    /// </summary>
+    public string? Prenom { get; set; }
+
+    /// <summary>
+    /// Gets or sets the collection of teachers associated with the user.
+    /// </summary>
     public ICollection<Teacher>? Teachers { get; set; }
+
+    /// <summary>
+    /// Gets or sets the collection of absences associated with the user.
+    /// </summary>
     public ICollection<Absence>? Absences { get; set; }
 
+    /// <summary>
+    /// Gets or sets the collection of students associated with the user.
+    /// </summary>
     public ICollection<Student>? Students { get; set; }
 
+    /// <summary>
+    /// Gets or sets the collection of parents associated with the user.
+    /// </summary>
     public ICollection<Parent>? Parents { get; set; }
 }

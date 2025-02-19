@@ -2,11 +2,23 @@
 
 public class Subject
 {
+    /// <summary>
+    /// Gets or sets the unique identifier of the subject.
+    /// </summary>
     public int Id { get; set; }
 
-    // Propriété Nom de type chaîne de caractères, représente le nom de famille de l'élève
+    /// <summary>
+    /// Gets or sets the name of the subject.
+    /// </summary>
     public string Nom { get; set; }
 
+    /// <summary>
+    /// Gets or sets the collection of teachers associated with the subject.
+    /// </summary>
     public ICollection<Teacher>? Teachers { get; set; }
+
+    /// <summary>
+    /// Gets or sets the collection of grades associated with the subject.
+    /// </summary>
     public ICollection<Grade>? Grades { get; set; }
 }
