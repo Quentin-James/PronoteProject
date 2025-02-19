@@ -2,7 +2,7 @@
 
 using Microsoft.AspNetCore.Routing;
 
-public interface IAddRoute
+public interface IRoute
 {
     void MapRoutes(IEndpointRouteBuilder app);
 }

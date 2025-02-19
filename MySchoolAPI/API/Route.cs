@@ -2,11 +2,14 @@
 
 using Business;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Routing;
 
-public class Route : IAddRoute
+/// <summary>
+///
+/// </summary>
+public class Route : IRoute
 {
-    public void MapRoutes(WebApplication app)
+    public void MapRoutes(IEndpointRouteBuilder app)
     {
-        throw new NotImplementedException();
     }
 }

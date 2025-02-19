@@ -36,7 +36,7 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Minimal API", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
     c.CustomSchemaIds(type => type.FullName);
 });
 
@@ -50,7 +50,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Minimal API v1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
     });
 }
 app.UseHttpsRedirection();
@@ -59,13 +59,13 @@ app.UseCors("AllowAngularOrigins");
 app.UseRouting();
 app.UseAuthorization();
 // Map routes
-var interfaceType = typeof(IAddRoute);
+var interfaceType = typeof(IRoute);
 var implementingTypes = Assembly.GetExecutingAssembly().GetTypes()
     .Where(t => interfaceType.IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
 
 foreach (var type in implementingTypes)
 {
-    var route = Activator.CreateInstance(type) as IAddRoute;
+    var route = Activator.CreateInstance(type) as IRoute;
     route?.MapRoutes(app);
 }
 
