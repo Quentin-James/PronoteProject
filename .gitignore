@@ -1,4 +1,29 @@
-*.vs/
-*.vsidx/
-*.obj/
-*.bin/
+# Dossiers bin et obj
+bin/
+obj/
+
+# Fichiers de configuration utilisateur
+*.user
+*.suo
+
+# Fichiers de logs
+*.log
+
+# Fichiers de build
+*.dll
+*.exe
+
+# Fichiers de packages NuGet
+*.nupkg
+packages/
+
+# Fichiers de configuration de l'environnement
+.env
+
+# Fichiers de configuration de Visual Studio
+.vscode/
+.vs/
+.vsidx/
+
+# Fichiers de configuration de Rider
+.idea/
