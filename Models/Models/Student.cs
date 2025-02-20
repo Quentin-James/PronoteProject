@@ -1,4 +1,7 @@
 ﻿namespace Models.Models;
+
+using System.ComponentModel.DataAnnotations;
+
 public class Student
 {
     /// <summary>
@@ -9,11 +12,13 @@ public class Student
     /// <summary>
     /// Gets or sets the last name of the student.
     /// </summary>
+    [Required]
     public string LastName { get; set; }
 
     /// <summary>
     /// Gets or sets the first name of the student.
     /// </summary>
+    [Required]
     public string FirstName { get; set; }
 
     /// <summary>
