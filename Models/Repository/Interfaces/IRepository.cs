@@ -1,4 +1,4 @@
-﻿namespace Models.Repository
+﻿namespace Models.Repository.Interfaces
 {
     using System;
     using System.Collections.Generic;
