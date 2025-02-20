@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using DataAccess.Repository;
+    using DataAccess.Repository.Interfaces;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -39,6 +41,16 @@
            (opt => opt.UseSqlServer(connectionString));
             services.AddIdentityCore<User>()
                 .AddEntityFrameworkStores<DbDataAccess>();
+        }
+
+        /// <summary>
+        /// Configures the application database context and SQL Server context.
+        /// </summary>
+        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration config)
+        {
+            services.AddScoped<IRepositoryStudents, StudentsRepository>();
+            services.ConfigureSqlServerContext(config);
+            return services;
         }
     }
 }
