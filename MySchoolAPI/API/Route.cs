@@ -1,7 +1,6 @@
 ﻿namespace API;
 
 using Business;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 
 /// <summary>
