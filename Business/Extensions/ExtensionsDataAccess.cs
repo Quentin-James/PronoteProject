@@ -1,7 +1,9 @@
 ﻿namespace Business.Extensions;
 
 using DataAccess.Extensions;
+using DataAccess.Repository.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -16,7 +18,10 @@ public static class ExtensionsDataAccess
     /// <returns>The updated service collection.</returns>
     public static IServiceCollection AppDbContextMini(this IServiceCollection services, IdentityBuilder builder, IConfiguration config)
     {
+        services.AddDbContext<DbContext>(options =>
+           options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
         services.AddDbContextMini(builder);
+        services.AddRepositories(config);
         services.ConfigureSqlServerContext(config);
         return services;
     }
@@ -29,6 +34,14 @@ public static class ExtensionsDataAccess
     public static IServiceCollection AddHostedService(this IServiceCollection services)
     {
         services.AddHostedService<HostedService>();
+
+        return services;
+    }
+
+    public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration config)
+    {
+        services.AddScoped<IServiceStudents, StudentsServices>();
+        services.ConfigureSqlServerContext(config);
         return services;
     }
 }

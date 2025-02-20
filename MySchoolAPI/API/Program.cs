@@ -7,6 +7,7 @@ using System.Text.Json.Serialization;
 using Microsoft.OpenApi.Models;
 using Business.Extensions;
 using Models.Models;
+using DataAccess.Repository.Interfaces;
 
 /// <summary>
 /// Entry point for the application. Configures services and middleware.
@@ -63,7 +64,7 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
     c.CustomSchemaIds(type => type.FullName);
 });
-
+builder.Services.AddServices(builder.Configuration);
 /// <summary>
 /// Builds the application.
 /// </summary>
