@@ -44,12 +44,19 @@
         }
 
         /// <summary>
+<<<<<<< HEAD
         /// Configures the application database context and SQL Server context, with AddRepositories
+=======
+        /// Configures the application database context and SQL Server context.
+>>>>>>> 06c83f7 (Ajout Repo Student +genéricité avec injection de dépendance)
         /// </summary>
         public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<IRepositoryStudents, StudentsRepository>();
+<<<<<<< HEAD
             services.AddScoped<IRepositoryTeachers, TeachersRepository>();
+=======
+>>>>>>> 06c83f7 (Ajout Repo Student +genéricité avec injection de dépendance)
             services.ConfigureSqlServerContext(config);
             return services;
         }

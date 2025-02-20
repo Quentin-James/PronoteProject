@@ -1,14 +1,34 @@
+<<<<<<< HEAD
 ﻿using System.Linq.Expressions;
 using Business.Interfaces;
+=======
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+>>>>>>> 06c83f7 (Ajout Repo Student +genéricité avec injection de dépendance)
 using DataAccess.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Models;
 
 namespace Business
 {
+<<<<<<< HEAD
     internal class StudentsServices(IRepositoryStudents repositoryStudents) : IServiceStudents
     {
         private readonly IRepositoryStudents _repositoryStudents = repositoryStudents;
+=======
+    internal class StudentsServices : IServiceStudents
+    {
+        private readonly IRepositoryStudents _repositoryStudents;
+
+        public StudentsServices(IRepositoryStudents repositoryStudents)
+        {
+            _repositoryStudents = repositoryStudents;
+        }
+>>>>>>> 06c83f7 (Ajout Repo Student +genéricité avec injection de dépendance)
 
         public async Task<IEnumerable<Student>> GetListAsync()
         {
