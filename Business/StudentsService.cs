@@ -8,7 +8,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+<<<<<<< HEAD
 >>>>>>> 06c83f7 (Ajout Repo Student +genéricité avec injection de dépendance)
+=======
+using Business.Interfaces;
+>>>>>>> 5045249 ( Correctif sur les repo Student, + push repo Teachers)
 using DataAccess.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Models;
