@@ -1,51 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DataAccess.Repository.Interfaces;
+﻿using DataAccess.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Models.Models;
 using Models.Repository;
 
-///<summary>
-///StudentsRepository call the method of Repository
-//<summary/>
-
 namespace DataAccess.Repository
 {
-    internal class StudentsRepository : Repository<Student>, IRepositoryStudents
+    internal class TeachersRepository : Repository<Teacher>, IRepositoryTeachers
     {
         private readonly DbContext _context;
-        private readonly DbSet<Student> _dbSet;
+        private readonly DbSet<Teacher> _dbSet;
 
-        public StudentsRepository(DbContext context) : base(context)
+        public TeachersRepository(DbContext context) : base(context)
         {
             _context = context;
-            _dbSet = context.Set<Student>();
+            _dbSet = context.Set<Teacher>();
         }
 
-        public async Task<IEnumerable<Student>> GetListAsync()
-        {
-            return await _dbSet.ToListAsync();
-        }
-
-        public async Task<Student?> GetByIdAsync(int id)
+        public async Task<Teacher?> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task<Student?> PostAsync(Student entity)
+        public async Task<Teacher?> UpdateByIdAsync(int id, Student entity)
+        {
+            return await _dbSet.FindAsync(id);
+        }
+
+        public async Task<Teacher?> PostAsync(Teacher entity)
         {
             await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
-        }
-
-        public async Task<Student?> UpdateByIdAsync(int id, Student entity)
-        {
-            return await _dbSet.FindAsync(id);
         }
 
         public async Task<bool> DeleteAsync(int id)

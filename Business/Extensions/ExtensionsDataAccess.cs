@@ -1,5 +1,6 @@
 ﻿namespace Business.Extensions;
 
+using Business.Interfaces;
 using DataAccess.Extensions;
 using DataAccess.Repository.Interfaces;
 using Microsoft.AspNetCore.Identity;
