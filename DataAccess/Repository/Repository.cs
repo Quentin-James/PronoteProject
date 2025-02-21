@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Repository.Interfaces;
 
+///<summary>
+///Create the generic method of the API
+/// </summary>
 namespace Models.Repository
 {
     internal abstract class Repository<T> : IRepository<T> where T : class

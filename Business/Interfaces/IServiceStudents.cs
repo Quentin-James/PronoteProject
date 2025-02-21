@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Models;
 
-namespace Business
+namespace Business.Interfaces
 {
     public interface IServiceStudents
     {
@@ -26,4 +26,3 @@ namespace Business
             bool asNoTracking = true);
     }
 }
-

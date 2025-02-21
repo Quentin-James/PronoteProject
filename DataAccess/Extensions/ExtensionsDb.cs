@@ -44,11 +44,12 @@
         }
 
         /// <summary>
-        /// Configures the application database context and SQL Server context.
+        /// Configures the application database context and SQL Server context, with AddRepositories
         /// </summary>
         public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<IRepositoryStudents, StudentsRepository>();
+            services.AddScoped<IRepositoryTeachers, TeachersRepository>();
             services.ConfigureSqlServerContext(config);
             return services;
         }
