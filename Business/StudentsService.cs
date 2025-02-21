@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using Business.Interfaces;
 using DataAccess.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -11,14 +6,9 @@ using Models.Models;
 
 namespace Business
 {
-    internal class StudentsServices : IServiceStudents
+    internal class StudentsServices(IRepositoryStudents repositoryStudents) : IServiceStudents
     {
-        private readonly IRepositoryStudents _repositoryStudents;
-
-        public StudentsServices(IRepositoryStudents repositoryStudents)
-        {
-            _repositoryStudents = repositoryStudents;
-        }
+        private readonly IRepositoryStudents _repositoryStudents = repositoryStudents;
 
         public async Task<IEnumerable<Student>> GetListAsync()
         {
