@@ -44,9 +44,4 @@ public class Course
     /// Gets or sets the teacher associated with the course.
     /// </summary>
     public virtual Teacher? Teacher { get; set; }
-
-    /// <summary>
-    /// Gets or sets the identifier of the associated teacher.
-    /// </summary>
-    //public int TeacherId { get; set; }
 }

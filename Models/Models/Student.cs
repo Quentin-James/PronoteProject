@@ -55,9 +55,4 @@ public class Student
     /// Gets or sets the user associated with the student.
     /// </summary>
     public virtual User? User { get; set; }
-
-    /// <summary>
-    /// Gets or sets the identifier of the associated user.
-    /// </summary>
-    public int UserId { get; set; }
 }

@@ -73,7 +73,6 @@ namespace Models.Repository
             }
 
             _context.Entry(entity).CurrentValues.SetValues(updatedEntity);
-            _context.Entry(entity).State = EntityState.Modified;
 
             await _context.SaveChangesAsync().ConfigureAwait(false);
             return entity;
