@@ -36,6 +36,11 @@ public class Teacher
     public virtual Subject? Subjects { get; set; }
 
     /// <summary>
+    /// Gets or sets the identifier of the associated school.
+    /// </summary>
+    public int IdSchool { get; set; }
+
+    /// <summary>
     /// Gets or sets the collection of courses associated with the teacher.
     /// </summary>
     public ICollection<Course>? Courses { get; set; }
@@ -44,4 +49,9 @@ public class Teacher
     /// Gets or sets the user associated with the teacher.
     /// </summary>
     public virtual User? Users { get; set; }
+
+    /// <summary>
+    /// Gets or sets the identifier of the associated user.
+    /// </summary>
+    //public int Id_user { get; set; }
 }

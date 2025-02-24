@@ -26,10 +26,6 @@ public class Classe
     public virtual School? School { get; set; }
 
     /// <summary>
-    /// Gets or sets the identifier of the associated school.
-    /// </summary>
-
-    /// <summary>
     /// Gets or sets the collection of courses associated with the class.
     /// </summary>
     public ICollection<Course>? Courses { get; set; }
