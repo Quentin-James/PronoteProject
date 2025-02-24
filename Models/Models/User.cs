@@ -10,12 +10,12 @@ public class User : IdentityUser<int>
     /// <summary>
     /// Gets or sets the last name of the user.
     /// </summary>
-    public string? Nom { get; set; }
+    public string? LastName { get; set; }
 
     /// <summary>
     /// Gets or sets the first name of the user.
     /// </summary>
-    public string? Prenom { get; set; }
+    public string? FirstName { get; set; }
 
     /// <summary>
     /// Gets or sets the collection of teachers associated with the user.

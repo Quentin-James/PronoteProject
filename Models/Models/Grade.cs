@@ -1,4 +1,5 @@
 ﻿namespace Models.Models;
+
 /// <summary>
 /// Represents a grade assigned to a student for a subject.
 /// </summary>
@@ -17,7 +18,7 @@ public class Grade
     /// <summary>
     /// Gets or sets the date the grade was assigned.
     /// </summary>
-    public DateTime Date_Note { get; set; }
+    public DateTime GradeDate { get; set; }
 
     /// <summary>
     /// Gets or sets the subject associated with the grade.
@@ -27,7 +28,7 @@ public class Grade
     /// <summary>
     /// Gets or sets the identifier of the associated subject.
     /// </summary>
-    public int Id_subject { get; set; }
+    public int IdSubject { get; set; }
 
     /// <summary>
     /// Gets or sets the student associated with the grade.
