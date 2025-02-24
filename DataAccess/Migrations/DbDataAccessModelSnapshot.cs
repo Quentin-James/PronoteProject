@@ -248,7 +248,7 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TeacherId")
+                    b.Property<int?>("TeacherId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -272,12 +272,6 @@ namespace DataAccess.Migrations
 
                     b.Property<DateTime>("GradeDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("IdSubject")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id_student")
-                        .HasColumnType("int");
 
                     b.Property<int>("Note")
                         .HasColumnType("int");
@@ -308,9 +302,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
 
                     b.Property<int>("Phone")
                         .HasColumnType("int");
@@ -434,15 +425,6 @@ namespace DataAccess.Migrations
                     b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IdSchool")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IdSubject")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id_user")
-                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -630,9 +612,7 @@ namespace DataAccess.Migrations
 
                     b.HasOne("Models.Models.Teacher", "Teacher")
                         .WithMany("Courses")
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TeacherId");
 
                     b.Navigation("Class");
 
