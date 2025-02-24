@@ -8,7 +8,7 @@ public class Parent
     /// <summary>
     /// Gets or sets the parent's identifier.
     /// </summary>
-    public int Id { get; set; }
+   // public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the parent's last name.
@@ -38,5 +38,5 @@ public class Parent
     /// <summary>
     /// Gets or sets the identifier of the associated user.
     /// </summary>
-    public int IdUser { get; set; }
+   // public int IdUser { get; set; }
 }

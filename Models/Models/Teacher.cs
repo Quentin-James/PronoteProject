@@ -8,7 +8,7 @@ public class Teacher
     /// <summary>
     /// Gets or sets the unique identifier of the teacher.
     /// </summary>
-    public int Id { get; set; }
+    //public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the last name of the teacher.
@@ -38,7 +38,7 @@ public class Teacher
     /// <summary>
     /// Gets or sets the identifier of the associated school.
     /// </summary>
-    public int IdSchool { get; set; }
+    //public int IdSchool { get; set; }
 
     /// <summary>
     /// Gets or sets the identifier of the associated subject.

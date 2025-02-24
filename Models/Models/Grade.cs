@@ -28,7 +28,7 @@ public class Grade
     /// <summary>
     /// Gets or sets the identifier of the associated subject.
     /// </summary>
-    public int IdSubject { get; set; }
+    //public int IdSubject { get; set; }
 
     /// <summary>
     /// Gets or sets the student associated with the grade.

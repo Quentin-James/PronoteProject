@@ -1,4 +1,5 @@
 ﻿namespace Models.Models;
+
 /// <summary>
 /// Represents the relationship between a student and a parent.
 /// </summary>
@@ -7,7 +8,7 @@ public class StudentParent
     /// <summary>
     /// Gets or sets the unique identifier of the relationship.
     /// </summary>
-    public int Id { get; set; }
+    //public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the student's identifier.
