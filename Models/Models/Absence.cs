@@ -13,17 +13,17 @@ public class Absence
     /// <summary>
     /// Gets or sets a value indicating whether the absence is justified.
     /// </summary>
-    public bool Justifie { get; set; }
+    public bool Justification { get; set; }
 
     /// <summary>
     /// Gets or sets the start date of the absence.
     /// </summary>
-    public DateTime Date_debut { get; set; }
+    public DateTime BeginingDate { get; set; }
 
     /// <summary>
     /// Gets or sets the end date of the absence.
     /// </summary>
-    public DateTime Date_fin { get; set; }
+    public DateTime FinishingDate { get; set; }
 
     /// <summary>
     /// Gets or sets the user associated with the absence.

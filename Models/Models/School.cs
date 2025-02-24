@@ -1,4 +1,5 @@
 ﻿namespace Models.Models;
+
 /// <summary>
 /// Represents a school.
 /// </summary>
@@ -12,7 +13,7 @@ public class School
     /// <summary>
     /// Gets or sets the name of the school.
     /// </summary>
-    public string Nom { get; set; }
+    public string Name { get; set; }
 
     /// <summary>
     /// Gets or sets the collection of classes associated with the school.

@@ -1,4 +1,5 @@
 ﻿namespace Models.Models;
+
 public class Subject
 {
     /// <summary>
@@ -9,7 +10,7 @@ public class Subject
     /// <summary>
     /// Gets or sets the name of the subject.
     /// </summary>
-    public string Nom { get; set; }
+    public string Name { get; set; }
 
     /// <summary>
     /// Gets or sets the collection of teachers associated with the subject.

@@ -17,7 +17,7 @@ public class DbDataAccess(DbContextOptions<DbDataAccess> options) : IdentityDbCo
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        modelBuilder.Entity<User>().ToTable("User");
+        modelBuilder.Entity<User>().ToTable("Users");
     }
 
     /// <summary>
