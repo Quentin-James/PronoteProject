@@ -43,7 +43,7 @@ public class Teacher
     /// <summary>
     /// Gets or sets the identifier of the associated subject.
     /// </summary>
-    public int IdSubject { get; set; }
+    //public int IdSubject { get; set; }
 
     /// <summary>
     /// Gets or sets the collection of courses associated with the teacher.
@@ -58,5 +58,5 @@ public class Teacher
     /// <summary>
     /// Gets or sets the identifier of the associated user.
     /// </summary>
-    public int Id_user { get; set; }
+    //public int Id_user { get; set; }
 }

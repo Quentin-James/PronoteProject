@@ -8,7 +8,7 @@ public class Absence
     /// <summary>
     /// Gets or sets the unique identifier of the absence.
     /// </summary>
-    public int Id { get; set; }
+    //public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets a value indicating whether the absence is justified.

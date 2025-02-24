@@ -1,4 +1,5 @@
 ﻿namespace Models.Models;
+
 /// <summary>
 /// Represents a course.
 /// </summary>
@@ -7,7 +8,7 @@ public class Course
     /// <summary>
     /// Gets or sets the unique identifier of the course.
     /// </summary>
-    public int Id { get; set; }
+    //public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the start date of the course.
@@ -47,5 +48,5 @@ public class Course
     /// <summary>
     /// Gets or sets the identifier of the associated teacher.
     /// </summary>
-    public int TeacherId { get; set; }
+    //public int TeacherId { get; set; }
 }

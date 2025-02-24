@@ -23,55 +23,55 @@ public class DbDataAccess(DbContextOptions<DbDataAccess> options) : IdentityDbCo
     /// <summary>
     /// DbSet for absences.
     /// </summary>
-    public DbSet<Absence> Absences { get; set; }
+    public DbSet<Absence> Absences => this.Set<Absence>();
 
     /// <summary>
     /// DbSet for courses.
     /// </summary>
-    public DbSet<Course> Courses { get; set; }
+    public DbSet<Course> Courses => this.Set<Course>();
 
     /// <summary>
     /// DbSet for parents.
     /// </summary>
-    public DbSet<Parent> Parents { get; set; }
+    public DbSet<Parent> Parents => this.Set<Parent>();
 
     /// <summary>
     /// DbSet for schools.
     /// </summary>
-    public DbSet<School> Schools { get; set; }
+    public DbSet<School> Schools => this.Set<School>();
 
     /// <summary>
     /// DbSet for students.
     /// </summary>
-    public DbSet<Student> Students { get; set; }
+    public DbSet<Student> Students => this.Set<Student>();
 
     /// <summary>
     /// DbSet for subjects.
     /// </summary>
-    public DbSet<Subject> Subjects { get; set; }
+    public DbSet<Subject> Subjects => this.Set<Subject>();
 
     /// <summary>
     /// DbSet for teachers.
     /// </summary>
-    public DbSet<Teacher> Teachers { get; set; }
+    public DbSet<Teacher> Teachers => this.Set<Teacher>();
 
     /// <summary>
     /// DbSet for grades.
     /// </summary>
-    public DbSet<Grade> Grades { get; set; }
+    public DbSet<Grade> Grades => this.Set<Grade>();
 
     /// <summary>
     /// DbSet for classes.
     /// </summary>
-    public DbSet<Classe> Classes { get; set; }
+    public DbSet<Classe> Classes => this.Set<Classe>();
 
     /// <summary>
     /// DbSet for classrooms.
     /// </summary>
-    public DbSet<Classroom> Classrooms { get; set; }
+    public DbSet<Classroom> Classrooms => this.Set<Classroom>();
 
     /// <summary>
     /// DbSet for student-parent relationships.
     /// </summary>
-    public DbSet<StudentParent> StudentParents { get; set; }
+    public DbSet<StudentParent> StudentParents => this.Set<StudentParent>();
 }
