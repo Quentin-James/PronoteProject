@@ -8,7 +8,7 @@ public class Grade
     /// <summary>
     /// Gets or sets the unique identifier of the grade.
     /// </summary>
-    //public int Id { get; set; }
+    public int Id { get; set; }
 
     /// <summary>
     /// Gets or sets the assigned grade.
@@ -26,17 +26,7 @@ public class Grade
     public virtual Subject? Subjects { get; set; }
 
     /// <summary>
-    /// Gets or sets the identifier of the associated subject.
-    /// </summary>
-    //public int IdSubject { get; set; }
-
-    /// <summary>
     /// Gets or sets the student associated with the grade.
     /// </summary>
     public virtual Student? Students { get; set; }
-
-    /// <summary>
-    /// Gets or sets the identifier of the associated student.
-    /// </summary>
-    //public int Id_student { get; set; }
 }
