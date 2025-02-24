@@ -26,19 +26,9 @@ public class Course
     public virtual Classe? Class { get; set; }
 
     /// <summary>
-    /// Gets or sets the identifier of the associated class.
-    /// </summary>
-    public int ClassId { get; set; }
-
-    /// <summary>
     /// Gets or sets the classroom associated with the course.
     /// </summary>
     public virtual Classroom? Classroom { get; set; }
-
-    /// <summary>
-    /// Gets or sets the identifier of the associated classroom.
-    /// </summary>
-    public int ClassroomId { get; set; }
 
     /// <summary>
     /// Gets or sets the teacher associated with the course.

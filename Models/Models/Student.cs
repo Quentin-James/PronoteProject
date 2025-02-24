@@ -37,11 +37,6 @@ public class Student
     public virtual Classe? Class { get; set; }
 
     /// <summary>
-    /// Gets or sets the identifier of the associated class.
-    /// </summary>
-    public int ClassId { get; set; }
-
-    /// <summary>
     /// Gets or sets the collection of grades associated with the student.
     /// </summary>
     public ICollection<Grade>? Grades { get; set; }
@@ -49,7 +44,7 @@ public class Student
     /// <summary>
     /// Gets or sets the collection of parent-student relationships.
     /// </summary>
-    public ICollection<StudentParent>? StudentParents { get; set; }
+    public ICollection<Parent>? Parents { get; set; }
 
     /// <summary>
     /// Gets or sets the user associated with the student.

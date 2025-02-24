@@ -28,10 +28,10 @@ public class Parent
     /// <summary>
     /// Gets or sets the collection of student-parent relationships.
     /// </summary>
-    public ICollection<StudentParent>? StudentParents { get; set; }
+    public ICollection<Student>? Students { get; set; }
 
     /// <summary>
     /// Gets or sets the user associated with the parent.
     /// </summary>
-    public virtual User? Users { get; set; }
+    public virtual User? User { get; set; }
 }

@@ -59,11 +59,6 @@ public interface IDbDataAccess
     DbSet<Classroom> Classrooms { get; }
 
     /// <summary>
-    /// Data set for student-parent relationships.
-    /// </summary>
-    DbSet<StudentParent> StudentParents { get; }
-
-    /// <summary>
     /// Data set for users.
     /// </summary>
     DbSet<User> Users { get; }

@@ -18,6 +18,9 @@ public class DbDataAccess(DbContextOptions<DbDataAccess> options) : IdentityDbCo
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<User>().ToTable("Users");
+        modelBuilder.Entity<User>().HasOne(x => x.Teacher).WithOne(x => x.User).HasForeignKey<Teacher>(x => x.Id).IsRequired(false);
+        modelBuilder.Entity<User>().HasOne(x => x.Parent).WithOne(x => x.User).HasForeignKey<Parent>(x => x.Id).IsRequired(false);
+        modelBuilder.Entity<User>().HasOne(x => x.Student).WithOne(x => x.User).HasForeignKey<Student>(x => x.Id).IsRequired(false);
     }
 
     /// <summary>
@@ -69,9 +72,4 @@ public class DbDataAccess(DbContextOptions<DbDataAccess> options) : IdentityDbCo
     /// DbSet for classrooms.
     /// </summary>
     public DbSet<Classroom> Classrooms => this.Set<Classroom>();
-
-    /// <summary>
-    /// DbSet for student-parent relationships.
-    /// </summary>
-    public DbSet<StudentParent> StudentParents => this.Set<StudentParent>();
 }
