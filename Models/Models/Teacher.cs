@@ -1,4 +1,5 @@
 ﻿namespace Models.Models;
+
 /// <summary>
 /// Represents a teacher.
 /// </summary>
@@ -12,17 +13,17 @@ public class Teacher
     /// <summary>
     /// Gets or sets the last name of the teacher.
     /// </summary>
-    public string Nom { get; set; }
+    public string LastName { get; set; }
 
     /// <summary>
     /// Gets or sets the first name of the teacher.
     /// </summary>
-    public string Prenom { get; set; }
+    public string FirstName { get; set; }
 
     /// <summary>
     /// Gets or sets the phone number of the teacher.
     /// </summary>
-    public int Telephone { get; set; }
+    public int Phone { get; set; }
 
     /// <summary>
     /// Gets or sets the school associated with the teacher.
@@ -35,16 +36,6 @@ public class Teacher
     public virtual Subject? Subjects { get; set; }
 
     /// <summary>
-    /// Gets or sets the identifier of the associated school.
-    /// </summary>
-    public int Id_school { get; set; }
-
-    /// <summary>
-    /// Gets or sets the identifier of the associated subject.
-    /// </summary>
-    public int Id_subject { get; set; }
-
-    /// <summary>
     /// Gets or sets the collection of courses associated with the teacher.
     /// </summary>
     public ICollection<Course>? Courses { get; set; }
@@ -52,10 +43,5 @@ public class Teacher
     /// <summary>
     /// Gets or sets the user associated with the teacher.
     /// </summary>
-    public virtual User? Users { get; set; }
-
-    /// <summary>
-    /// Gets or sets the identifier of the associated user.
-    /// </summary>
-    public int Id_user { get; set; }
+    public virtual User? User { get; set; }
 }
