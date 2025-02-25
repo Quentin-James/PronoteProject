@@ -19,8 +19,8 @@ public static class ExtensionsDataAccess
     /// <returns>The updated service collection.</returns>
     public static IServiceCollection AppDbContextMini(this IServiceCollection services, IdentityBuilder builder, IConfiguration config)
     {
-        services.AddDbContext<DbContext>(options =>
-         options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+        services.ConfigureSqlServerContext(config);
+
         services.AddRepositories(config);
         return services;
     }
@@ -40,7 +40,6 @@ public static class ExtensionsDataAccess
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration config)
     {
         services.AddScoped<IServiceStudents, StudentsServices>();
-        services.ConfigureSqlServerContext(config);
         return services;
     }
 }

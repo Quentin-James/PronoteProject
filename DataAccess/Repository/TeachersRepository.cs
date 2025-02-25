@@ -8,7 +8,7 @@ namespace DataAccess.Repository
 {
     internal class TeachersRepository : Repository<Teacher>, IRepositoryTeachers
     {
-        public TeachersRepository(DbContext context) : base(context)
+        public TeachersRepository(DbDataAccess context) : base(context)
         {
         }
     }

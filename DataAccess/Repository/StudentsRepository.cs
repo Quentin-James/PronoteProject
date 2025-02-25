@@ -15,7 +15,7 @@ using Models.Repository;
 
 namespace DataAccess.Repository
 {
-    internal class StudentsRepository(DbContext context) : Repository<Student>(context), IRepositoryStudents
+    internal class StudentsRepository(DbDataAccess context) : Repository<Student>(context), IRepositoryStudents
     {
     }
 }
