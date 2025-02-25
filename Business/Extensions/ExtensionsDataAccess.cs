@@ -21,7 +21,6 @@ public static class ExtensionsDataAccess
     {
         services.AddDbContext<DbContext>(options =>
            options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
-        services.AddDbContextMini(builder);
         services.AddRepositories(config);
         services.ConfigureSqlServerContext(config);
         return services;

@@ -50,7 +50,6 @@
         {
             services.AddScoped<IRepositoryStudents, StudentsRepository>();
             services.AddScoped<IRepositoryTeachers, TeachersRepository>();
-            services.ConfigureSqlServerContext(config);
             return services;
         }
     }
