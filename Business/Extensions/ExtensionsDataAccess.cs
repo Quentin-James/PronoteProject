@@ -20,9 +20,8 @@ public static class ExtensionsDataAccess
     public static IServiceCollection AppDbContextMini(this IServiceCollection services, IdentityBuilder builder, IConfiguration config)
     {
         services.AddDbContext<DbContext>(options =>
-           options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+         options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
         services.AddRepositories(config);
-        services.ConfigureSqlServerContext(config);
         return services;
     }
 
