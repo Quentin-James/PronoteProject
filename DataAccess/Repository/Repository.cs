@@ -29,7 +29,7 @@ namespace Models.Repository
             return result > 0;
         }
 
-        public async IQueryable<T> FindAsync(Expression<Func<T, bool>>? predicate = null,
+        public IQueryable<T> Find(Expression<Func<T, bool>>? predicate = null,
             Expression<Func<T, IProperty>>? navigationPropertyPath = null,
             bool asNoTracking = true)
         {

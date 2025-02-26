@@ -1,15 +1,16 @@
-﻿using System.Linq.Expressions;
-using Business.Interfaces;
+﻿using Business.Interfaces;
 using DataAccess.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Models;
 
 namespace Business
 {
     internal class TeachersService(IRepositoryTeachers repositoryTeachers) : IServiceTeachers
     {
+        private readonly IRepositoryTeachers _repositoryTeachers = repositoryTeachers;
+
         public async Task<Teacher?> GetByIdAsync(int id)
         {
+            _repositoryTeachers.Find(predicate: null, navigationPropertyPath: null, asNoTracking: true);
             return await repositoryTeachers.GetByIdAsync(id).ConfigureAwait(false);
         }
 
@@ -26,11 +27,6 @@ namespace Business
         public async Task<bool> DeleteAsync(int id)
         {
             return await repositoryTeachers.DeleteAsync(id).ConfigureAwait(false);
-        }
-
-        public IQueryable<Teacher> FindAsync(Expression<Func<Teacher, bool>>? predicate = null, Expression<Func<Teacher, IProperty>>? navigationPropertyPath = null, bool asNoTracking = true)
-        {
-            return repositoryTeachers.FindAsync(predicate, navigationPropertyPath, asNoTracking);
         }
     }
 }

@@ -1,7 +1,5 @@
-using System.Linq.Expressions;
 using Business.Interfaces;
 using DataAccess.Repository.Interfaces;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Models;
 
 namespace Business;
@@ -12,6 +10,7 @@ internal class StudentsServices(IRepositoryStudents repositoryStudents) : IServi
 
     public async Task<IEnumerable<Student>> GetListAsync()
     {
+        _repositoryStudents.Find(predicate: null, navigationPropertyPath: null, asNoTracking: true);
         return await _repositoryStudents.GetListAsync().ConfigureAwait(false);
     }
 
@@ -33,10 +32,5 @@ internal class StudentsServices(IRepositoryStudents repositoryStudents) : IServi
     public async Task<bool> DeleteAsync(int id)
     {
         return await _repositoryStudents.DeleteAsync(id).ConfigureAwait(false);
-    }
-
-    public IQueryable<Student> FindAsync(Expression<Func<Student, bool>>? predicate = null, Expression<Func<Student, IProperty>>? navigationPropertyPath = null, bool asNoTracking = true)
-    {
-        return _repositoryStudents.FindAsync(predicate, navigationPropertyPath, asNoTracking);
     }
 }

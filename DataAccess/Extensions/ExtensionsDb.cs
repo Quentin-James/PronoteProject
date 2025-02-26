@@ -38,9 +38,6 @@
                 .AddEntityFrameworkStores<DbDataAccess>();
         }
 
-        /// <summary>
-        /// Configures the application database context and SQL Server context, with AddRepositories
-        /// </summary>
         public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<IRepositoryStudents, StudentsRepository>();
