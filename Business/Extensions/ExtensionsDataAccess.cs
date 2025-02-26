@@ -2,9 +2,7 @@
 
 using Business.Interfaces;
 using DataAccess.Extensions;
-using DataAccess.Repository.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

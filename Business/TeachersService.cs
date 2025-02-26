@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq.Expressions;
 using Business.Interfaces;
 using DataAccess.Repository.Interfaces;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -11,38 +6,31 @@ using Models.Models;
 
 namespace Business
 {
-    internal class TeachersService : IServiceTeachers
+    internal class TeachersService(IRepositoryTeachers repositoryTeachers) : IServiceTeachers
     {
-        private readonly IRepositoryTeachers _repositoryTeachers;
-
-        public TeachersService(IRepositoryTeachers repositoryTeachers)
-        {
-            _repositoryTeachers = repositoryTeachers;
-        }
-
         public async Task<Teacher?> GetByIdAsync(int id)
         {
-            return await _repositoryTeachers.GetByIdAsync(id);
+            return await repositoryTeachers.GetByIdAsync(id).ConfigureAwait(false);
         }
 
         public async Task<Teacher?> PostAsync(Teacher entity)
         {
-            return await _repositoryTeachers.PostAsync(entity);
+            return await repositoryTeachers.PostAsync(entity).ConfigureAwait(false);
         }
 
         public async Task<Teacher?> UpdateByIdAsync(int id, Teacher entity)
         {
-            return await _repositoryTeachers.UpdateByIdAsync(id, entity);
+            return await repositoryTeachers.UpdateByIdAsync(id, entity).ConfigureAwait(false);
         }
 
         public async Task<bool> DeleteAsync(int id)
         {
-            return await _repositoryTeachers.DeleteAsync(id);
+            return await repositoryTeachers.DeleteAsync(id).ConfigureAwait(false);
         }
 
         public IQueryable<Teacher> FindAsync(Expression<Func<Teacher, bool>>? predicate = null, Expression<Func<Teacher, IProperty>>? navigationPropertyPath = null, bool asNoTracking = true)
         {
-            return _repositoryTeachers.FindAsync(predicate, navigationPropertyPath, asNoTracking);
+            return repositoryTeachers.FindAsync(predicate, navigationPropertyPath, asNoTracking);
         }
     }
 }

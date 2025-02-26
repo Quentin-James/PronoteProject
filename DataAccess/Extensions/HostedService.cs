@@ -1,8 +1,8 @@
 ﻿namespace DataAccess.Extensions;
 
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 /// <summary>
 /// A hosted service that applies database migrations at startup if not in development environment.
