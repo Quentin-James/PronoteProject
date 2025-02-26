@@ -6,9 +6,8 @@ using Models.Repository;
 ///StudentsRepository call the method of Repository
 //<summary/>
 
-namespace DataAccess.Repository
+namespace DataAccess.Repository;
+
+internal class StudentsRepository(DbDataAccess context) : Repository<Student>(context), IRepositoryStudents
 {
-    internal class StudentsRepository(DbDataAccess context) : Repository<Student>(context), IRepositoryStudents
-    {
-    }
 }

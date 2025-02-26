@@ -2,9 +2,8 @@
 using Models.Models;
 using Models.Repository;
 
-namespace DataAccess.Repository
+namespace DataAccess.Repository;
+
+internal class TeachersRepository(DbDataAccess context) : Repository<Teacher>(context), IRepositoryTeachers
 {
-    internal class TeachersRepository(DbDataAccess context) : Repository<Teacher>(context), IRepositoryTeachers
-    {
-    }
 }

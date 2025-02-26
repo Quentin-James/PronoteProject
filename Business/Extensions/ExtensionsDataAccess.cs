@@ -35,6 +35,13 @@ public static class ExtensionsDataAccess
         return services;
     }
 
+    /// <summary>
+    /// Adds student services to the service collection.
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="config"></param>
+    /// <returns></returns>
+
     public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration config)
     {
         services.AddScoped<IServiceStudents, StudentsServices>();

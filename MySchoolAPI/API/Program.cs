@@ -60,6 +60,9 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "API", Version = "v1" });
     c.CustomSchemaIds(type => type.FullName);
 });
+///<summary>
+///Adds services to the container.
+///</summary>
 builder.Services.AddServices(builder.Configuration);
 /// <summary>
 /// Builds the application.
@@ -93,9 +96,7 @@ app.UseCors("AllowAngularOrigins");
 /// </summary>
 app.UseRouting();
 
-/// <summary>
-/// Enables authorization.
-/// </summary>
+// Enables authorization.
 app.UseAuthorization();
 
 /// <summary>
