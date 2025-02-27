@@ -3,79 +3,77 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Models.Repository.Interfaces;
 
-namespace Models.Repository
+namespace Models.Repository;
+
+internal abstract class Repository<T> : IRepository<T> where T : class
 {
-    internal abstract class Repository<T> : IRepository<T> where T : class
+    protected readonly DbContext _context;
+    protected readonly DbSet<T> _dbSet;
+
+    public Repository(DbContext context)
     {
-        protected readonly DbContext _context;
-        protected readonly DbSet<T> _dbSet;
+        _context = context;
+        _dbSet = _context.Set<T>();
+    }
 
-        public Repository(DbContext context)
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var entity = await _dbSet.FindAsync(id).ConfigureAwait(false);
+        if (entity == null)
         {
-            _context = context;
-            _dbSet = _context.Set<T>();
+            return false;
+        }
+        _dbSet.Remove(entity);
+        var result = await _context.SaveChangesAsync().ConfigureAwait(false);
+        return result > 0;
+    }
+
+    public IQueryable<T> Find(Expression<Func<T, bool>>? predicate = null,
+        Expression<Func<T, IProperty>>? navigationPropertyPath = null,
+        bool asNoTracking = true)
+    {
+        var query = _dbSet.AsQueryable();
+        if (navigationPropertyPath != null)
+        {
+            query = query.Include(navigationPropertyPath);
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        if (predicate != null)
         {
-            var entity = await _dbSet.FindAsync(id).ConfigureAwait(false);
-            if (entity == null)
-            {
-                return false;
-            }
-
-            _dbSet.Remove(entity);
-            var result = await _context.SaveChangesAsync().ConfigureAwait(false);
-            return result > 0;
+            query = query.Where(predicate);
         }
 
-        public IQueryable<T> FindAsync(Expression<Func<T, bool>>? predicate = null,
-            Expression<Func<T, IProperty>>? navigationPropertyPath = null,
-            bool asNoTracking = true)
+        return asNoTracking ? query.AsNoTracking() : query;
+    }
+
+    public async Task<T?> GetByIdAsync(int id)
+    {
+        return await _dbSet.FindAsync(id).ConfigureAwait(false);
+    }
+
+    public async Task<IEnumerable<T>> GetListAsync()
+    {
+        return await _dbSet.ToListAsync().ConfigureAwait(false);
+    }
+
+    public async Task<T?> PostAsync(T entity)
+    {
+        _dbSet.Add(entity);
+        await _context.SaveChangesAsync().ConfigureAwait(false);
+        return entity;
+    }
+
+    public async Task<T?> UpdateByIdAsync(int id, T updatedEntity)
+    {
+        var entity = await _dbSet.FindAsync(id).ConfigureAwait(false);
+        if (entity == null)
         {
-            var query = _dbSet.AsQueryable();
-            if (navigationPropertyPath != null)
-            {
-                query = query.Include(navigationPropertyPath);
-            }
-
-            if (predicate != null)
-            {
-                query = query.Where(predicate);
-            }
-
-            return asNoTracking ? query.AsNoTracking() : query;
+            return null;
         }
 
-        public async Task<T?> GetByIdAsync(int id)
-        {
-            return await _dbSet.FindAsync(id).ConfigureAwait(false);
-        }
+        _context.Entry(entity).CurrentValues.SetValues(updatedEntity);
 
-        public async Task<IEnumerable<T>> GetListAsync()
-        {
-            return await _dbSet.ToListAsync().ConfigureAwait(false);
-        }
-
-        public async Task<T?> PostAsync(T entity)
-        {
-            _dbSet.Add(entity);
-            await _context.SaveChangesAsync().ConfigureAwait(false);
-            return entity;
-        }
-
-        public async Task<T?> UpdateByIdAsync(int id, T updatedEntity)
-        {
-            var entity = await _dbSet.FindAsync(id).ConfigureAwait(false);
-            if (entity == null)
-            {
-                return null;
-            }
-
-            _context.Entry(entity).CurrentValues.SetValues(updatedEntity);
-
-            await _context.SaveChangesAsync().ConfigureAwait(false);
-            return entity;
-        }
+        await _context.SaveChangesAsync().ConfigureAwait(false);
+        return entity;
     }
 }
